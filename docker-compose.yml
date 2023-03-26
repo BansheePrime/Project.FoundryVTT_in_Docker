@@ -1,0 +1,3 @@
+secrets:
+  server-certificate:
+    file: ./.master.env
