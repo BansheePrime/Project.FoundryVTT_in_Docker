@@ -1,3 +1,14 @@
-secrets:
-  server-certificate:
-    file: ./.master.env
+version: '3.3'
+
+services:
+   fvtt:
+        container_name: fvtt
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        image: henryk-sienkiewicz
+        volumes:
+          - /opt/fvtt/app:/home/foundry/fvtt
+          - /opt/fvtt/data:/home/foundry/fvttdata
+        ports:
+            - "30000:30000"
