@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: update apt cache and make sure curl, wget, unzip, rsync, git, vim and tmux are installed
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - curl
+        - wget
+        - tree
+        - unzip
+        - rsync
+        - git
+        - vim
+        - tmux
+

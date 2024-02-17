@@ -1,0 +1,26 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: allow OpenSSH
+      community.general.ufw:
+        rule: allow
+        name: OpenSSH
+    - name: connection rate limiting
+      community.general.ufw:
+        rule: limit
+        port: ssh
+        proto: tcp
+    - name: allow access to tcp port 80
+      community.general.ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+    # - name: FoundryVTT SPECIFIC - deny all access to port 30000
+    #   community.general.ufw:
+    #     rule: deny
+    #     port: '30000'
+    - name: enable UFW
+      community.general.ufw:
+        state: enabled
