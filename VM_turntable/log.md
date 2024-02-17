@@ -60,12 +60,13 @@ sudo systemctl reload sshd.service
 `sudo ufw enable`
 
 ### filtering curl output with sed and awk
-curl -I --silent 192.168.56.49:30000 | sed -n '3 p'  
-curl -I --silent 192.168.56.49 | awk 'NR==3'  
+curl -I --silent 192.168.56.48:30000 | sed -n '3 p'  
+curl -I --silent 192.168.56.48 | awk 'NR==3'  
 and droping errors
-echo 'port 30000 --- ' $(curl -I --silent 192.168.56.49:30000 2>/dev/null | sed -n '3 p')
+echo 'port 30000 --- ' $(curl -I --silent 192.168.56.48:30000 2>/dev/null | sed -n '3 p')
 
 
 ### check.sh while applying ufw playbook
 `watch -n 10 ./check.sh`
  
+ ### 
