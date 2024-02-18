@@ -8,6 +8,7 @@
         name: "{{ item }}"
         update_cache: yes
       loop:
+        - sudo
         - curl
         - wget
         - tree

@@ -2,7 +2,7 @@
 FoundryVTT in Docker
 
 ## FoundryVTT as VM
-Testing and development
+Testing and developing
 
 Stack:
 VM provisioning and management: vagrant - virtualbox - ansible
