@@ -9,6 +9,7 @@
         update_cache: yes
       loop:
         - sudo
+        - adduser
         - curl
         - wget
         - tree

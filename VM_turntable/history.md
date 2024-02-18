@@ -12,6 +12,7 @@ ssh-copy-id -i ~/.ssh/samwise-key-rsa samwise@192.168.56.48
 
 Testing:
 sudo adduser -m -c "Test User Account" treebeard
+echo "$new_username:$new_password" | chpasswd
 sudo passwd samwise
 #### add to ~/.ssh/config file 
 Host foundryvtt
@@ -24,3 +25,20 @@ from sh to bash
 command `useradd -D ` shows all defaults while adding new user
 
 ### create new sshd_config
+1. CLEAR directories: /etc/ssh/sshd_config.d/ and /etc/ssh/ssh_config.d/
+
+### ansible directory layout
+<https://docs.ansible.com/ansible/latest/tips_tricks/sample_setup.html#sample-setup>
+
+./inventories/production/
+./inventories/staging/
+./roles/
+
+### control.yaml
+prepartions for control node
+
+### vagrant.yaml
+prep for vagrant vm
+
+### foundryvtt.yaml
+prep for VTT host
